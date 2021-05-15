@@ -1,0 +1,449 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+
+    margin: 0 auto;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+img{
+    max-width: 100%;
+}
+
+.mobile-container{
+
+    width: 100%;
+    padding: 5% 10%;
+    overflow: hidden;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+header input{
+
+    padding: 0.5rem 0.5rem;
+    border-radius: 0px;
+    border: none;
+    border-bottom: 2px solid black;
+    background-color: transparent;
+    font-size: 17px;
+    width: 300px;
+
+}
+
+
+header input:focus{
+
+outline: none;
+background: transparent;
+}
+
+
+input::placeholder
+{
+    color: #000;
+
+}
+
+header button{
+
+     background-color: transparent;
+     color: black;
+     font-size: 1.55rem;
+     border: none;
+     cursor: pointer;
+    margin-left: 5px;
+}
+
+header button:focus{
+
+outline: none;
+
+}
+
+
+.fav-container {
+
+    padding: 1rem;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+
+}
+
+.fav-meals{
+
+    display: flex;
+    list-style-type: none;
+    padding: 0px;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.fav-meals li{
+
+    display: flex;
+    flex-direction: column;
+    padding: 10px 20px;
+    position: relative;
+    cursor: pointer;
+}
+
+.fav-meals li img{
+
+    border-radius: 50%;
+    background: #fff;
+    object-fit: cover;
+    height: 100px;
+    width: 105px;
+    border: 0.5px solid black;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.29);
+}
+
+
+.fav-meals li span{
+
+    font-size: 0.96rem;
+    padding-top: 10px ;
+    text-align: center;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 115px;
+}
+
+
+.fav-meals li .clear{
+
+    background-color: transparent;
+    position: absolute;
+    top: -0.5rem;
+    right: 0rem;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    opacity: 0;
+}
+
+.fav-meals li:hover .clear{
+
+    transition: 0.6s ease-in-out;
+    opacity: 1;
+}
+
+.fav-meals li .clear:focus{
+
+outline: none;
+}
+
+
+.meals{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.meal{
+
+    position: relative;
+    border-radius: 3px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.29);
+    width: 320px;
+    margin: 15px;
+overflow: hidden;
+    background-color: #fff;
+}
+
+.meal-header{
+
+    overflow: hidden;
+
+}
+
+.meal-header .random{
+
+    position: absolute;
+    top: 10px;
+    background-color: #c92e69;
+    padding: 0px ;
+    font-size: 15px;
+    text-transform: uppercase;
+    color: #fff;
+    padding: 2px 10px;
+}
+
+.meal-header img{
+
+    height: 250px;
+    transition: all 1.5s ease;
+    width: 100%;
+    object-fit: cover;
+}
+
+.meal-header img:hover{
+
+    transform: scale(1.5);
+}
+
+.meal-body{
+
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    padding: 0.7rem 1.2rem 1rem 1.2rem;
+}
+
+.meal-body h4{
+
+    margin: 0;
+    color: #000;
+}
+
+.meal-body .fav-btn{
+
+    background: none;
+    border: none;
+    font-size: 1.3rem;
+    color: gray;
+    cursor: pointer;
+}
+
+
+.meal-body .fav-btn .active{
+
+
+    color: #c92e69;
+}
+
+.meal-body .fav-btn:focus{
+
+outline: none;
+}
+
+
+
+.popup-container
+{
+
+    position: relative;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding-left:10%;
+    padding-right:10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    min-height: 100vh ;
+    /* overflow: hidden; */
+    
+}
+
+.hidden
+{
+    display: none;
+    pointer-events: none;
+}
+
+.popup{
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    /* align-items: top; */
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.meal-info{
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items:center;
+    /* align-items: top; */
+    /* margin-top: 120px; */
+
+}
+
+.popup .close-popup
+{
+    background: transparent;
+    cursor: pointer;
+    color: #e73c7e;
+    border: none;
+    font-size: 35px;
+    position: absolute;
+    top: 2rem;
+    right: 2.4rem;
+}
+
+
+.popup .close-popup:focus{
+
+    outline: none;
+}
+
+.meal-image{
+
+width: 100%;
+color: #e73c7e;
+text-align: center;
+}
+
+.meal-image h1{
+
+    color:#e73c7e;
+}
+
+.popup img {
+
+    margin-top: 0px;
+    height: auto;
+    width: 100%;
+    object-fit: cover;
+    border: 2px solid #e73c7e;
+    margin-bottom: 50px;
+}
+
+.meal-description{
+
+    width: 100%;
+    padding: 0px 10px;
+    color: #e73c7e;
+}
+
+
+.meal-description p {
+
+    text-align: justify;
+}
+
+
+.meal-description h3{
+
+    margin-top: 40px;
+}
+
+.meal-description ul{
+
+    margin-left: -20px;
+}
+
+.meal-description ul li{
+
+    text-decoration: none;
+    padding-left: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#loader {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 1;
+    width: 120px;
+    height: 120px;
+    margin: -76px 0 0 -76px;
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #c92e69;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+  }
+  
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  /* Add animation to "page content" */
+  .animate-bottom {
+    position: relative;
+    -webkit-animation-name: animatebottom;
+    -webkit-animation-duration: 1s;
+    animation-name: animatebottom;
+    animation-duration: 1s
+  }
+  
+  @-webkit-keyframes animatebottom {
+    from { bottom:-100px; opacity:0 } 
+    to { bottom:0px; opacity:1 }
+  }
+  
+  @keyframes animatebottom { 
+    from{ bottom:-100px; opacity:0 } 
+    to{ bottom:0; opacity:1 }
+  }
+  
+  #myDiv {
+    display: none;
+    text-align: center;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
